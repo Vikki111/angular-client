@@ -2,10 +2,7 @@ package com.example.app.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -13,6 +10,7 @@ import java.util.Date;
 @Data
 public class Employee {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "reg_number")
     private Integer regNumber;
     @Column(name = "last_name")
@@ -25,7 +23,7 @@ public class Employee {
     private Date birthday;
     @Column(name = "gender")
     private String gender;
-    @Column(name = "jobNumber")
+    @Column(name = "job_number")
     private Integer jobNumber;
     @Column(name = "home_number")
     private Integer homeNumber;

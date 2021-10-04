@@ -2,16 +2,14 @@ package com.example.app.model;
 
 import lombok.Data;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "department")
 @Data
 public class Department {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "department_id")
     private Integer departmentId;
     @Column(name = "department_name")
