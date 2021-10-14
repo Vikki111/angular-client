@@ -2,9 +2,11 @@ package com.example.app.service;
 
 import com.example.app.model.Position;
 import com.example.app.repository.PositionRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class PositionServiceImpl implements PositionService {
 
     private final PositionRepository positionRepository;

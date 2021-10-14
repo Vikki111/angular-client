@@ -2,9 +2,11 @@ package com.example.app.service;
 
 import com.example.app.model.TypeOperation;
 import com.example.app.repository.TypeOperationRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TypeOperationServiceImpl implements TypeOperationService {
 
     private final TypeOperationRepository typeOperationRepository;
