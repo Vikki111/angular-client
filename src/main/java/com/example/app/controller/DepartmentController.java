@@ -12,6 +12,7 @@ import java.util.List;
 
 @Slf4j
 @RestController
+@CrossOrigin
 public class DepartmentController {
 
     private final DepartmentService departmentService;
