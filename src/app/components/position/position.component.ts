@@ -10,21 +10,13 @@ import { Position } from '../../components/position/position';
 })
 export class PositionComponent implements OnInit {
    positions: Observable<Position[]>;
-//   positions: Position[] = [];
 
   constructor(private positionService: PositionService) {
       this.positions = this.positionService.getPositionsList()
   };
 
   ngOnInit(): void {
-//     this.reloadData();
-this.positions = this.positionService.getPositionsList();
-this.positions.subscribe(partner => {
-  console.log("! "+ partner);
-});
-
-console.log("!!! "+ this.positions);
-//     this.positionService.getPositionsList().subscribe((positions: Position[]) => this.positions = positions);
+    this.positions = this.positionService.getPositionsList();
   }
 
   reloadData() {
@@ -32,6 +24,12 @@ console.log("!!! "+ this.positions);
   }
 
   deletePosition(id: number) {
-      this.positionService.deletePosition(id);
-    }
+    this.positionService.deletePosition(id)
+    .subscribe(
+            data => {
+              console.log(data);
+              this.reloadData();
+            },
+            error => console.log(error));
+  }
 }

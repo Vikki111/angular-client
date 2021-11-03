@@ -13,7 +13,6 @@ export class PositionService {
   constructor(private http: HttpClient) { }
 
   getPosition(id: number): Observable<Position> {
-//     return this.http.get(`${this.baseUrl}/${id}`);
     return this.http.get<Position>(`${this.baseUrl}/${id}`, {});
   }
 
@@ -22,17 +21,14 @@ export class PositionService {
   }
 
   updatePosition(id: number, position: Position): Observable<Position> {
-//     return this.http.put(`${this.baseUrl}/${id}`, position);
     return this.http.put<Position>(`${this.baseUrl}/${id}`, position, {});
   }
 
-  deletePosition(id: number): Observable<String> {
-    return this.http.delete(`${this.baseUrl}/${id}`, { responseType: 'text' });
+  deletePosition(id: number): Observable<any> {
+    return this.http.delete(`${this.baseUrl}/${id}`, {});
   }
 
   getPositionsList(): Observable<Position[]> {
     return this.http.get<Position[]>(`${this.baseUrl}`, {});
   }
-
-//   return this.http.put<Car>(url, car, {observe: 'response'});
 }
