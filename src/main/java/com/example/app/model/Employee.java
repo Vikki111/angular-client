@@ -20,7 +20,7 @@ public class Employee {
     @Column(name = "patronymic")
     private String patronymic;
     @Column(name = "birthday")
-    private Date birthday;
+    private String birthday;
     @Column(name = "gender")
     private String gender;
     @Column(name = "job_number")
