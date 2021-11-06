@@ -1,0 +1,33 @@
+<h3>Update Employee</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name">Last Name</label>
+      <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">
+      <label for="name">First Name</label>
+      <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName" name="firstName">
+      <label for="name">Patronymic</label>
+      <input type="text" class="form-control" id="patronymic" required [(ngModel)]="employee.patronymic" name="patronymic">
+      <label for="name">Birthday</label>
+      <input type="text" class="form-control" id="birthday" required [(ngModel)]="employee.birthday" name="birthday">
+      <label for="name">Gender</label>
+      <input type="text" class="form-control" id="gender" required [(ngModel)]="employee.gender" name="gender">
+      <label for="name">Job Number</label>
+      <input type="text" class="form-control" id="jobNumber" required [(ngModel)]="employee.jobNumber" name="jobNumber">
+      <label for="name">Home Number</label>
+      <input type="text" class="form-control" id="homeNumber" required [(ngModel)]="employee.homeNumber" name="homeNumber">
+      <label for="name">Union Membership</label>
+      <input type="text" class="form-control" id="unionMembership" required [(ngModel)]="employee.unionMembership" name="unionMembership">
+      <label for="name">Street</label>
+      <input type="text" class="form-control" id="street" required [(ngModel)]="employee.street" name="street">
+      <label for="name">House</label>
+      <input type="text" class="form-control" id="house" required [(ngModel)]="employee.house" name="house">
+      <label for="name">Apartment</label>
+      <input type="text" class="form-control" id="apartment" required [(ngModel)]="employee.apartment" name="apartment">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>
+

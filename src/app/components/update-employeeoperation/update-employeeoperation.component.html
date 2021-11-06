@@ -1,0 +1,18 @@
+<h3>Update Employeeoperation</h3>
+<div style="width: 400px;">
+  <form (ngSubmit)="onSubmit()">
+
+    <div class="form-group">
+      <label for="name">Date Operation</label>
+      <input type="text" class="form-control" id="dateOperation" required [(ngModel)]="employeeoperation.dateOperation" name="dateOperation">
+      <label for="name">Reg Number</label>
+      <input type="text" class="form-control" id="regNumber" required [(ngModel)]="employeeoperation.regNumber" name="regNumber">
+      <label for="name">Rosition Id</label>
+      <input type="text" class="form-control" id="positionId" required [(ngModel)]="employeeoperation.positionId" name="positionId">
+      <label for="name">Department Id</label>
+      <input type="text" class="form-control" id="departmentId" required [(ngModel)]="employeeoperation.departmentId" name="departmentId">
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</div>

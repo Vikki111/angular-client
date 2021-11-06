@@ -1,0 +1,45 @@
+<div class="col-md-6 offset-md-3">
+  <h3> Create Employee </h3>
+  <form (ngSubmit) = "onSubmit()">
+
+    <div class="form-group">
+      <label>Last Name</label>
+      <input type="text" class ="form-control" id = "lastName"
+             [(ngModel)] = "employee.lastName" name = "lastName">
+      <label>First Name</label>
+      <input type="text" class ="form-control" id = "firstName"
+             [(ngModel)] = "employee.firstName" name = "firstName">
+      <label>Patronymic</label>
+      <input type="text" class ="form-control" id = "patronymic"
+             [(ngModel)] = "employee.patronymic" name = "patronymic">
+      <label>Birthday</label>
+      <input type="text" class ="form-control" id = "birthday"
+             [(ngModel)] = "employee.birthday" name = "birthday">
+      <label>Gender</label>
+      <input type="text" class ="form-control" id = "gender"
+             [(ngModel)] = "employee.gender" name = "gender">
+      <label>Job Number</label>
+      <input type="text" class ="form-control" id = "jobNumber"
+             [(ngModel)] = "employee.jobNumber" name = "jobNumber">
+      <label>Home Number</label>
+      <input type="text" class ="form-control" id = "homeNumber"
+             [(ngModel)] = "employee.homeNumber" name = "homeNumber">
+      <label>Union Membership</label>
+      <input type="text" class ="form-control" id = "unionMembership"
+             [(ngModel)] = "employee.unionMembership" name = "unionMembership">
+      <label>Street</label>
+      <input type="text" class ="form-control" id = "street"
+             [(ngModel)] = "employee.street" name = "street">
+      <label>House</label>
+      <input type="text" class ="form-control" id = "house"
+             [(ngModel)] = "employee.house" name = "house">
+      <label>Apartment</label>
+      <input type="text" class ="form-control" id = "apartment"
+             [(ngModel)] = "employee.apartment" name = "apartment">
+    </div>
+
+    <button class = "btn btn-success" type ="submit">Submit</button>
+
+  </form>
+</div>
+

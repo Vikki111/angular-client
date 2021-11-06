@@ -13,6 +13,12 @@ import { CreateDepartmentComponent } from './components/create-department/create
 import { TypeoperationComponent } from './components/typeoperation/typeoperation.component';
 import { UpdateTypeoperationComponent } from './components/update-typeoperation/update-typeoperation.component';
 import { CreateTypeoperationComponent } from './components/create-typeoperation/create-typeoperation.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
+import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
+import { EmployeeoperationComponent } from './components/employeeoperation/employeeoperation.component';
+import { CreateEmployeeoperationComponent } from './components/create-employeeoperation/create-employeeoperation.component';
+import { UpdateEmployeeoperationComponent } from './components/update-employeeoperation/update-employeeoperation.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +31,13 @@ import { CreateTypeoperationComponent } from './components/create-typeoperation/
     CreateDepartmentComponent,
     TypeoperationComponent,
     UpdateTypeoperationComponent,
-    CreateTypeoperationComponent
+    CreateTypeoperationComponent,
+    EmployeeComponent,
+    UpdateEmployeeComponent,
+    CreateEmployeeComponent,
+    EmployeeoperationComponent,
+    CreateEmployeeoperationComponent,
+    UpdateEmployeeoperationComponent
   ],
   imports: [
     BrowserModule,

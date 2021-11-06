@@ -33,5 +33,4 @@ export class CreatePositionComponent implements OnInit {
      console.log(this.position);
      this.savePosition();
    }
-
 }

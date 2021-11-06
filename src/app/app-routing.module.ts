@@ -9,6 +9,12 @@ import { CreateDepartmentComponent } from './components/create-department/create
 import { TypeoperationComponent } from './components/typeoperation/typeoperation.component';
 import { UpdateTypeoperationComponent } from './components/update-typeoperation/update-typeoperation.component';
 import { CreateTypeoperationComponent } from './components/create-typeoperation/create-typeoperation.component';
+import { EmployeeComponent } from './components/employee/employee.component';
+import { UpdateEmployeeComponent } from './components/update-employee/update-employee.component';
+import { CreateEmployeeComponent } from './components/create-employee/create-employee.component';
+import { EmployeeoperationComponent } from './components/employeeoperation/employeeoperation.component';
+import { UpdateEmployeeoperationComponent } from './components/update-employeeoperation/update-employeeoperation.component';
+import { CreateEmployeeoperationComponent } from './components/create-employeeoperation/create-employeeoperation.component';
 
 const routes: Routes = [
   {path: 'positions', component: PositionComponent },
@@ -19,7 +25,13 @@ const routes: Routes = [
   {path: 'create-department', component: CreateDepartmentComponent},
   {path: 'typeoperations', component: TypeoperationComponent },
   {path: 'typeoperations/:id', component: UpdateTypeoperationComponent},
-  {path: 'create-typeoperation', component: CreateTypeoperationComponent}
+  {path: 'create-typeoperation', component: CreateTypeoperationComponent},
+  {path: 'employees', component: EmployeeComponent },
+  {path: 'employees/:id', component: UpdateEmployeeComponent},
+  {path: 'create-employee', component: CreateEmployeeComponent},
+  {path: 'employeeoperations', component: EmployeeoperationComponent },
+  {path: 'employeeoperations/:id', component: UpdateEmployeeoperationComponent},
+  {path: 'create-employeeoperation', component: CreateEmployeeoperationComponent}
 ];
 
 @NgModule({

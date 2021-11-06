@@ -1,0 +1,23 @@
+<div class="col-md-6 offset-md-3">
+  <h3> Create Employee Operation </h3>
+  <form (ngSubmit) = "onSubmit()">
+
+    <div class="form-group">
+      <label>Date Operation</label>
+      <input type="text" class ="form-control" id = "dateOperation"
+             [(ngModel)] = "employeeoperation.dateOperation" name = "dateOperation">
+      <label>Reg Number</label>
+      <input type="text" class ="form-control" id = "regNumber"
+             [(ngModel)] = "employeeoperation.regNumber" name = "regNumber">
+      <label>Position Id</label>
+      <input type="text" class ="form-control" id = "positionId"
+             [(ngModel)] = "employeeoperation.positionId" name = "positionId">
+      <label>Department Id</label>
+      <input type="text" class ="form-control" id = "departmentId"
+             [(ngModel)] = "employeeoperation.departmentId" name = "departmentId">
+    </div>
+
+    <button class = "btn btn-success" type ="submit">Submit</button>
+
+  </form>
+</div>

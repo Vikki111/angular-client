@@ -45,5 +45,4 @@ export class UpdatePositionComponent implements OnInit {
     gotoList() {
       this.router.navigate(['positions']);
     }
-
 }

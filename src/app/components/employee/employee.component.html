@@ -1,0 +1,42 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Employees</h1>
+  </div>
+  <div class="panel-body">
+    <button (click) = "createEmployee()" class = "btn btn-info">Add employee</button>
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>Last Name</th>
+        <th>First Name</th>
+        <th>Patronymic</th>
+        <th>Birthday</th>
+        <th>Gender</th>
+        <th>Job Number</th>
+        <th>Home Number</th>
+        <th>Union Membership</th>
+        <th>Street</th>
+        <th>House</th>
+        <th>Apartment</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let employee of employees | async">
+        <td>{{employee.lastName}}</td>
+        <td>{{employee.firstName}}</td>
+        <td>{{employee.patronymic}}</td>
+        <td>{{employee.birthday}}</td>
+        <td>{{employee.gender}}</td>
+        <td>{{employee.jobNumber}}</td>
+        <td>{{employee.homeNumber}}</td>
+        <td>{{employee.unionMembership}}</td>
+        <td>{{employee.street}}</td>
+        <td>{{employee.house}}</td>
+        <td>{{employee.apartment}}</td>
+        <td><button (click)="deleteEmployee(employee.regNumber)">Delete</button></td>
+        <td><button (click) = "updateEmployee(employee.regNumber)" class = "btn btn-info"> Update</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

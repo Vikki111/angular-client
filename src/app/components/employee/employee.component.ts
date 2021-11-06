@@ -1,0 +1,45 @@
+import { Component, OnInit } from '@angular/core';
+import { Observable } from "rxjs";
+import { EmployeeService } from "../../components/employee/employee.service";
+import { Employee } from '../../components/employee/employee';
+import { ActivatedRoute, Router } from '@angular/router';
+
+@Component({
+  selector: 'app-employee',
+  templateUrl: '../../components/employee/employee.component.html',
+  styleUrls: ['../../components/employee/employee.component.scss']
+})
+export class EmployeeComponent implements OnInit {
+   employees: Observable<Employee[]>;
+
+  constructor(private employeeService: EmployeeService, private route: ActivatedRoute,
+                                                            private router: Router) {
+      this.employees = this.employeeService.getEmployeesList()
+  };
+
+  ngOnInit(): void {
+    this.employees = this.employeeService.getEmployeesList();
+  }
+
+  reloadData() {
+    this.employees = this.employeeService.getEmployeesList();
+  }
+
+  updateEmployee(id: number){
+      this.router.navigate(['employees', id]);
+  }
+
+  createEmployee(){
+        this.router.navigate(['create-employee']);
+  }
+
+  deleteEmployee(id: number) {
+    this.employeeService.deleteEmployee(id)
+    .subscribe(
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error));
+  }
+}
