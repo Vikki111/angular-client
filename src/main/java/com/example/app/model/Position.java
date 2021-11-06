@@ -1,5 +1,6 @@
 package com.example.app.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "position")
 @Data
+@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
 public class Position {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

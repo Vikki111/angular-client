@@ -30,7 +30,7 @@ public class PositionServiceImpl implements PositionService {
 
     @Override
     public Position get(int id) {
-        return positionRepository.getById(id);
+        return positionRepository.getOne(id);
     }
 
     @Override
