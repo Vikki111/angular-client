@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
 import { PositionService } from "../../components/position/position.service";
 import { Position } from '../../components/position/position';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-position',
@@ -11,7 +12,8 @@ import { Position } from '../../components/position/position';
 export class PositionComponent implements OnInit {
    positions: Observable<Position[]>;
 
-  constructor(private positionService: PositionService) {
+  constructor(private positionService: PositionService, private route: ActivatedRoute,
+                                                            private router: Router) {
       this.positions = this.positionService.getPositionsList()
   };
 
@@ -21,6 +23,14 @@ export class PositionComponent implements OnInit {
 
   reloadData() {
     this.positions = this.positionService.getPositionsList();
+  }
+
+  updatePosition(id: number){
+      this.router.navigate(['positions', id]);
+  }
+
+  createPosition(){
+        this.router.navigate(['create-position']);
   }
 
   deletePosition(id: number) {

@@ -3,19 +3,23 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FormsModule } from '@angular/forms';
 import { PositionComponent } from './components/position/position.component';
 import { UpdatePositionComponent } from './components/update-position/update-position.component';
+import { CreatePositionComponent } from './components/create-position/create-position.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PositionComponent,
-    UpdatePositionComponent
+    UpdatePositionComponent,
+    CreatePositionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

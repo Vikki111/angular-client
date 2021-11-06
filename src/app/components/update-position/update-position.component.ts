@@ -11,10 +11,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class UpdatePositionComponent implements OnInit {
 
     id: number;
-    position: Position;
+    position: Position = new Position();
 
-    constructor(private route: ActivatedRoute,private router: Router,
-      private positionService: PositionService) { }
+    constructor(private positionService: PositionService,
+        private route: ActivatedRoute,
+        private router: Router) { }
 
     ngOnInit() {
       this.position = new Position();
@@ -42,7 +43,7 @@ export class UpdatePositionComponent implements OnInit {
     }
 
     gotoList() {
-      this.router.navigate(['/positions']);
+      this.router.navigate(['positions']);
     }
 
 }
