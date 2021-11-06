@@ -36,10 +36,10 @@ export class PositionComponent implements OnInit {
   deletePosition(id: number) {
     this.positionService.deletePosition(id)
     .subscribe(
-            data => {
-              console.log(data);
-              this.reloadData();
-            },
-            error => console.log(error));
+        data => {
+          console.log(data);
+          this.reloadData();
+        },
+        error => console.log(error));
   }
 }

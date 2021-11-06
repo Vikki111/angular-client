@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Typeoperations</h1>
+  </div>
+  <div class="panel-body">
+    <button (click) = "createTypeoperation()" class = "btn btn-info">Add typeoperation</button>
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>Typeoperation Name</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let typeoperation of typeoperations | async">
+        <td>{{typeoperation.typeOperationName}}</td>
+        <td><button (click)="deleteTypeoperation(typeoperation.typeOperationId)">Delete</button></td>
+        <td><button (click) = "updateTypeoperation(typeoperation.typeOperationId)" class = "btn btn-info"> Update</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

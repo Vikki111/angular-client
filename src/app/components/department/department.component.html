@@ -1,0 +1,24 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <h1>Departments</h1>
+  </div>
+  <div class="panel-body">
+    <button (click) = "createDepartment()" class = "btn btn-info">Add department</button>
+    <table class="table table-striped table-bordered">
+      <thead>
+      <tr>
+        <th>Department Name</th>
+        <th>Delete</th>
+        <th>Update</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let department of departments | async">
+        <td>{{department.departmentName}}</td>
+        <td><button (click)="deleteDepartment(department.departmentId)">Delete</button></td>
+        <td><button (click) = "updateDepartment(department.departmentId)" class = "btn btn-info"> Update</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
