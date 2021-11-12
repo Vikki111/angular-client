@@ -19,6 +19,7 @@ import { CreateEmployeeComponent } from './components/create-employee/create-emp
 import { EmployeeoperationComponent } from './components/employeeoperation/employeeoperation.component';
 import { CreateEmployeeoperationComponent } from './components/create-employeeoperation/create-employeeoperation.component';
 import { UpdateEmployeeoperationComponent } from './components/update-employeeoperation/update-employeeoperation.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { UpdateEmployeeoperationComponent } from './components/update-employeeop
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

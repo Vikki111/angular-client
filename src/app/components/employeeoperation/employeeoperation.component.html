@@ -8,19 +8,21 @@
       <thead>
       <tr>
         <th>Date Operation</th>
-        <th>Reg Number</th>
-        <th>Position Id</th>
-        <th>Department Id</th>
+        <th>Last Name</th>
+        <th>Position Name</th>
+        <th>Type Operation Name</th>
+        <th>Department Name</th>
         <th>Delete</th>
         <th>Update</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let employeeoperation of employeeoperations | async">
-        <td>{{employeeoperation.dateOperation}}</td>
-        <td>{{employeeoperation.regNumber}}</td>
-        <td>{{employeeoperation.positionId}}</td>
-        <td>{{employeeoperation.departmentId}}</td>
+        <td>{{employeeoperation.dateOperation | date:'yyyy-MM-dd'}}</td>
+        <td>{{employeeoperation.lastName}}</td>
+        <td>{{employeeoperation.positionName}}</td>
+        <td>{{employeeoperation.typeOperationName}}</td>
+        <td>{{employeeoperation.departmentName}}</td>
         <td><button (click)="deleteEmployeeoperation(employeeoperation.orderNumber)">Delete</button></td>
         <td><button (click) = "updateEmployeeoperation(employeeoperation.orderNumber)" class = "btn btn-info"> Update</button></td>
       </tr>

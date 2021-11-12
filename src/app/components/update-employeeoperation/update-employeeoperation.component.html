@@ -4,13 +4,16 @@
 
     <div class="form-group">
       <label for="name">Date Operation</label>
-      <input type="text" class="form-control" id="dateOperation" required [(ngModel)]="employeeoperation.dateOperation" name="dateOperation">
-      <label for="name">Reg Number</label>
-      <input type="text" class="form-control" id="regNumber" required [(ngModel)]="employeeoperation.regNumber" name="regNumber">
-      <label for="name">Rosition Id</label>
-      <input type="text" class="form-control" id="positionId" required [(ngModel)]="employeeoperation.positionId" name="positionId">
-      <label for="name">Department Id</label>
-      <input type="text" class="form-control" id="departmentId" required [(ngModel)]="employeeoperation.departmentId" name="departmentId">
+   <!--   <input type="text" class="form-control" id="dateOperation" required [(ngModel)]="employeeoperation.dateOperation" name="dateOperation"> -->
+      <input type="date" class="form-control" id="dateOperation" required [(ngModel)]="employeeoperation.dateOperation" name="dateOperation">
+      <label for="name">Last Name</label>
+      <input type="text" class="form-control" id="regNumber" required [(ngModel)]="employeeoperation.lastName" name="regNumber">
+      <label for="name">Position Name</label>
+      <input type="text" class="form-control" id="positionId" required [(ngModel)]="employeeoperation.positionName" name="positionId">
+      <label for="name">Type Operation</label>
+      <input type="text" class="form-control" id="typeOperationId" required [(ngModel)]="employeeoperation.typeOperationName" name="typeOperationId">
+      <label for="name">Department Name</label>
+      <input type="text" class="form-control" id="departmentId" required [(ngModel)]="employeeoperation.departmentName" name="departmentId">
     </div>
 
     <button type="submit" class="btn btn-success">Submit</button>

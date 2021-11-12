@@ -1,9 +1,10 @@
 export class Employeeoperation {
   orderNumber: number;
-  dateOperation: string;
-  regNumber: number;
-  positionId: number;
-  departmentId: number;
+  dateOperation: Date;
+  lastName: string;
+  positionName: string;
+  typeOperationName: string;
+  departmentName: string;
 }
 
 //  @Column(name = "order_number")
@@ -18,3 +19,11 @@ export class Employeeoperation {
 //     private Integer typeOperationId;
 //     @Column(name = "department_id")
 //     private Integer departmentId;
+//     @Transient
+//     private String lastName;
+//     @Transient
+//     private String positionName;
+//     @Transient
+//     private String typeOperationName;
+//     @Transient
+//     private String departmentName;

@@ -4,17 +4,22 @@
 
     <div class="form-group">
       <label>Date Operation</label>
-      <input type="text" class ="form-control" id = "dateOperation"
+   <!--   <input type="text" class ="form-control" id = "dateOperation"
+             [(ngModel)] = "employeeoperation.dateOperation" name = "dateOperation"> -->
+      <input type="date" class ="form-control" id = "dateOperation"
              [(ngModel)] = "employeeoperation.dateOperation" name = "dateOperation">
-      <label>Reg Number</label>
+      <label>Last Name</label>
       <input type="text" class ="form-control" id = "regNumber"
-             [(ngModel)] = "employeeoperation.regNumber" name = "regNumber">
-      <label>Position Id</label>
+             [(ngModel)] = "employeeoperation.lastName" name = "regNumber">
+      <label>Position Name</label>
       <input type="text" class ="form-control" id = "positionId"
-             [(ngModel)] = "employeeoperation.positionId" name = "positionId">
-      <label>Department Id</label>
+             [(ngModel)] = "employeeoperation.positionName" name = "positionId">
+      <label>Type Operation</label>
+      <input type="text" class ="form-control" id = "typeOperationId"
+             [(ngModel)] = "employeeoperation.typeOperationName" name = "typeOperationId">
+      <label>Department Name</label>
       <input type="text" class ="form-control" id = "departmentId"
-             [(ngModel)] = "employeeoperation.departmentId" name = "departmentId">
+             [(ngModel)] = "employeeoperation.departmentName" name = "departmentId">
     </div>
 
     <button class = "btn btn-success" type ="submit">Submit</button>
