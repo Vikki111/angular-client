@@ -1,12 +1,12 @@
-<h3>Update Typeoperation</h3>
-<div style="width: 400px;">
+<div class="container">
+  <h3>Update Typeoperation</h3>
   <form (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-      <label for="name">Typeoperation Name</label>
+      <label for="typeoperationName">Typeoperation Name</label>
       <input type="text" class="form-control" id="typeoperationName" required [(ngModel)]="typeoperation.typeOperationName" name="typeoperationName">
     </div>
-
+    <br>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>

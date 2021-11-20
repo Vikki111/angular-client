@@ -1,12 +1,11 @@
-<h3>Update Department</h3>
-<div style="width: 400px;">
+<div class="container">
+  <h3>Update Department</h3>
   <form (ngSubmit)="onSubmit()">
-
     <div class="form-group">
       <label for="name">Department Name</label>
       <input type="text" class="form-control" id="departmentName" required [(ngModel)]="department.departmentName" name="departmentName">
     </div>
-
+    <br>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>

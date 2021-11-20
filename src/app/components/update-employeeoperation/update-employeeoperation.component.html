@@ -1,21 +1,34 @@
-<h3>Update Employeeoperation</h3>
-<div style="width: 400px;">
+<div class="container">
+  <h3>Update Employeeoperation</h3>
+  <br>
   <form (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-      <label for="name">Date Operation</label>
-   <!--   <input type="text" class="form-control" id="dateOperation" required [(ngModel)]="employeeoperation.dateOperation" name="dateOperation"> -->
-      <input type="date" class="form-control" id="dateOperation" required [(ngModel)]="employeeoperation.dateOperation" name="dateOperation">
+      <label for="dateOperation">Date Operation</label>
+      <input type="date" class ="form-control" id = "dateOperation"
+             [(ngModel)] = "employeeoperation.dateOperation" name = "dateOperation">
+      <br>
       <label for="name">Last Name</label>
-      <input type="text" class="form-control" id="regNumber" required [(ngModel)]="employeeoperation.lastName" name="regNumber">
+      <select class="form-select"  [(ngModel)]="employeeoperation.lastName" name="lastName">
+        <option *ngFor="let v of employees" [value]="v.lastName">{{v.lastName}}</option>
+      </select>
+      <br>
       <label for="name">Position Name</label>
-      <input type="text" class="form-control" id="positionId" required [(ngModel)]="employeeoperation.positionName" name="positionId">
+      <select class="form-select" [(ngModel)]="employeeoperation.positionName" name="positionName">
+        <option *ngFor="let v of positions" [value]="v.positionName">{{v.positionName}}</option>
+      </select>
+      <br>
       <label for="name">Type Operation</label>
-      <input type="text" class="form-control" id="typeOperationId" required [(ngModel)]="employeeoperation.typeOperationName" name="typeOperationId">
+      <select class="form-select" [(ngModel)]="employeeoperation.typeOperationName" name="typeOperationName">
+        <option *ngFor="let v of typeoperations" [value]="v.typeOperationName">{{v.typeOperationName}}</option>
+      </select>
+      <br>
       <label for="name">Department Name</label>
-      <input type="text" class="form-control" id="departmentId" required [(ngModel)]="employeeoperation.departmentName" name="departmentId">
+      <select class="form-select" [(ngModel)]="employeeoperation.departmentName" name="departmentName">
+        <option *ngFor="let v of departments" [value]="v.departmentName">{{v.departmentName}}</option>
+      </select>
     </div>
-
+    <br>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>

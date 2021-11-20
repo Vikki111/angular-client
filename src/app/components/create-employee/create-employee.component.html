@@ -13,8 +13,6 @@
       <input type="text" class ="form-control" id = "patronymic"
              [(ngModel)] = "employee.patronymic" name = "patronymic">
       <label>Birthday</label>
- <!--     <input type="text" class ="form-control" id = "birthday"
-             [(ngModel)] = "employee.birthday" name = "birthday"> -->
      <input type="date" class ="form-control" id = "birthday"
              [(ngModel)] = "employee.birthday" name = "birthday">
       <label>Gender</label>
@@ -26,9 +24,15 @@
       <label>Home Number</label>
       <input type="text" class ="form-control" id = "homeNumber"
              [(ngModel)] = "employee.homeNumber" name = "homeNumber">
+      <div class="row">
+         <div class="col-md-4">
       <label>Union Membership</label>
-      <input type="text" class ="form-control" id = "unionMembership"
+         </div>
+         <div class="col-md-4">
+      <input type="checkbox" class ="form-check-input" id = "unionMembership"
              [(ngModel)] = "employee.unionMembership" name = "unionMembership">
+        </div>
+      </div>
       <label>Street</label>
       <input type="text" class ="form-control" id = "street"
              [(ngModel)] = "employee.street" name = "street">
@@ -39,7 +43,7 @@
       <input type="text" class ="form-control" id = "apartment"
              [(ngModel)] = "employee.apartment" name = "apartment">
     </div>
-
+    <br>
     <button class = "btn btn-success" type ="submit">Submit</button>
 
   </form>

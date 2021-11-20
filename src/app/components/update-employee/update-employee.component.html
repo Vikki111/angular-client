@@ -1,5 +1,5 @@
-<h3>Update Employee</h3>
-<div style="width: 400px;">
+<div class="container">
+  <h3>Update Employee</h3>
   <form (ngSubmit)="onSubmit()">
 
     <div class="form-group">
@@ -18,16 +18,22 @@
       <input type="text" class="form-control" id="jobNumber" required [(ngModel)]="employee.jobNumber" name="jobNumber">
       <label for="name">Home Number</label>
       <input type="text" class="form-control" id="homeNumber" required [(ngModel)]="employee.homeNumber" name="homeNumber">
-      <label for="name">Union Membership</label>
-      <input type="text" class="form-control" id="unionMembership" required [(ngModel)]="employee.unionMembership" name="unionMembership">
-      <label for="name">Street</label>
+      <div class="row">
+        <div class="col-md-4">
+          <label>Union Membership</label>
+        </div>
+        <div class="col-md-4">
+          <input type="checkbox" class ="form-check-input" id = "unionMembership"
+                 [(ngModel)] = "employee.unionMembership" name = "unionMembership">
+        </div>
+      </div>
       <input type="text" class="form-control" id="street" required [(ngModel)]="employee.street" name="street">
       <label for="name">House</label>
       <input type="text" class="form-control" id="house" required [(ngModel)]="employee.house" name="house">
       <label for="name">Apartment</label>
       <input type="text" class="form-control" id="apartment" required [(ngModel)]="employee.apartment" name="apartment">
     </div>
-
+    <br>
     <button type="submit" class="btn btn-success">Submit</button>
   </form>
 </div>
