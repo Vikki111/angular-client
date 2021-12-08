@@ -15,6 +15,8 @@ import { CreateEmployeeComponent } from './components/create-employee/create-emp
 import { EmployeeoperationComponent } from './components/employeeoperation/employeeoperation.component';
 import { UpdateEmployeeoperationComponent } from './components/update-employeeoperation/update-employeeoperation.component';
 import { CreateEmployeeoperationComponent } from './components/create-employeeoperation/create-employeeoperation.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 const routes: Routes = [
   {path: 'positions', component: PositionComponent },
@@ -29,7 +31,9 @@ const routes: Routes = [
   {path: 'employees', component: EmployeeComponent },
   {path: 'employees/:id', component: UpdateEmployeeComponent},
   {path: 'create-employee', component: CreateEmployeeComponent},
-  {path: '', redirectTo: 'employees', pathMatch: 'full'},
+  {path: "login",component: LoginComponent},
+  {path: "register",component: RegisterComponent},
+  {path: "",redirectTo:"employees",pathMatch:"full"},
   {path: 'employeeoperations', component: EmployeeoperationComponent },
   {path: 'employeeoperations/:id', component: UpdateEmployeeoperationComponent},
   {path: 'create-employeeoperation', component: CreateEmployeeoperationComponent}

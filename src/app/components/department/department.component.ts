@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { DepartmentService } from "../../components/department/department.service";
 import { Department } from '../../components/department/department';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenStorageService } from '../../token-storage.service';
 
 @Component({
   selector: 'app-department',
@@ -13,7 +14,8 @@ export class DepartmentComponent implements OnInit {
 
     departments: Observable<Department[]>;
 
-   constructor(private departmentService: DepartmentService, private route: ActivatedRoute,
+   constructor(private tokenStorageService: TokenStorageService,
+   private departmentService: DepartmentService, private route: ActivatedRoute,
                                                              private router: Router) {
        this.departments = this.departmentService.getDepartmentsList()
    };
@@ -42,5 +44,10 @@ export class DepartmentComponent implements OnInit {
                this.reloadData();
              },
              error => console.log(error));
+   }
+
+   logout(): void {
+     this.tokenStorageService.signOut();
+     window.location.reload();
    }
 }

@@ -20,6 +20,10 @@ import { EmployeeoperationComponent } from './components/employeeoperation/emplo
 import { CreateEmployeeoperationComponent } from './components/create-employeeoperation/create-employeeoperation.component';
 import { UpdateEmployeeoperationComponent } from './components/update-employeeoperation/update-employeeoperation.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './components/login/login.component';
+
+import { authInterceptorProviders } from './hlp/auth.interceptor';
+import { RegisterComponent } from './components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +42,9 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     CreateEmployeeComponent,
     EmployeeoperationComponent,
     CreateEmployeeoperationComponent,
-    UpdateEmployeeoperationComponent
+    UpdateEmployeeoperationComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +53,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     FormsModule,
     NgbModule
   ],
-  providers: [],
+  providers: [authInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
