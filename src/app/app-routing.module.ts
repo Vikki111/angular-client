@@ -33,7 +33,7 @@ const routes: Routes = [
   {path: 'create-employee', component: CreateEmployeeComponent},
   {path: "login",component: LoginComponent},
   {path: "register",component: RegisterComponent},
-  {path: "",redirectTo:"employees",pathMatch:"full"},
+  {path: "",redirectTo:"login",pathMatch:"full"},
   {path: 'employeeoperations', component: EmployeeoperationComponent },
   {path: 'employeeoperations/:id', component: UpdateEmployeeoperationComponent},
   {path: 'create-employeeoperation', component: CreateEmployeeoperationComponent}

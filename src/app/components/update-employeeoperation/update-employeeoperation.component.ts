@@ -21,7 +21,7 @@ export class UpdateEmployeeoperationComponent implements OnInit {
 
     id: number;
     employeeoperation: Employeeoperation = new Employeeoperation();
-    today = new Date().toISOString().split('T')[0];
+    date = new Date().toISOString().split('T')[0];
 
     employees: Employee[] = [];
     positions: Position[] = [];
@@ -50,8 +50,7 @@ export class UpdateEmployeeoperationComponent implements OnInit {
         .subscribe(data => {
           console.log(data);
           this.employeeoperation = data;
-          this.today = new Date(this.employeeoperation.dateOperation).toISOString().split('T')[0]; //отставание на день
-          console.log(this.today);
+          this.date = new Date(this.employeeoperation.dateOperation).toISOString().split('T')[0];
         }, error => console.log(error));
     }
 

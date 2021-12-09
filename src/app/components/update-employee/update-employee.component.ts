@@ -12,6 +12,7 @@ export class UpdateEmployeeComponent implements OnInit {
 
     id: number;
     employee: Employee = new Employee();
+    date = new Date().toISOString().split('T')[0];
 
     constructor(private employeeService: EmployeeService,
         private route: ActivatedRoute,
@@ -26,6 +27,7 @@ export class UpdateEmployeeComponent implements OnInit {
         .subscribe(data => {
           console.log(data)
           this.employee = data;
+          this.date = new Date(this.employee.birthday).toISOString().split('T')[0];
         }, error => console.log(error));
     }
 

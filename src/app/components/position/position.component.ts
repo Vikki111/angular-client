@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { PositionService } from "../../components/position/position.service";
 import { Position } from '../../components/position/position';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenStorageService } from '../../token-storage.service';
 
 @Component({
   selector: 'app-position',
@@ -12,7 +13,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class PositionComponent implements OnInit {
    positions: Observable<Position[]>;
 
-  constructor(private positionService: PositionService, private route: ActivatedRoute,
+  constructor(private tokenStorageService: TokenStorageService,
+  private positionService: PositionService, private route: ActivatedRoute,
                                                             private router: Router) {
       this.positions = this.positionService.getPositionsList()
   };
@@ -42,4 +44,9 @@ export class PositionComponent implements OnInit {
         },
         error => console.log(error));
   }
+
+  logout(): void {
+       this.tokenStorageService.signOut();
+       window.location.reload();
+     }
 }

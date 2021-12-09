@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { EmployeeService } from "../../components/employee/employee.service";
 import { Employee } from '../../components/employee/employee';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenStorageService } from '../../token-storage.service';
 
 @Component({
   selector: 'app-employee',
@@ -12,7 +13,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 export class EmployeeComponent implements OnInit {
    employees: Observable<Employee[]>;
 
-  constructor(private employeeService: EmployeeService, private route: ActivatedRoute,
+  constructor(private tokenStorageService: TokenStorageService,
+  private employeeService: EmployeeService, private route: ActivatedRoute,
                                                             private router: Router) {
       this.employees = this.employeeService.getEmployeesList()
   };
@@ -42,4 +44,9 @@ export class EmployeeComponent implements OnInit {
         },
         error => console.log(error));
   }
+
+  logout(): void {
+       this.tokenStorageService.signOut();
+       window.location.reload();
+     }
 }

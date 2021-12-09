@@ -3,6 +3,7 @@ import { Observable } from "rxjs";
 import { TypeoperationService } from "../../components/typeoperation/typeoperation.service";
 import { Typeoperation } from '../../components/typeoperation/typeoperation';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TokenStorageService } from '../../token-storage.service';
 
 @Component({
   selector: 'app-typeoperation',
@@ -13,7 +14,8 @@ export class TypeoperationComponent implements OnInit {
 
   typeoperations: Observable<Typeoperation[]>;
 
-    constructor(private typeoperationService: TypeoperationService, private route: ActivatedRoute,
+    constructor(private tokenStorageService: TokenStorageService,
+    private typeoperationService: TypeoperationService, private route: ActivatedRoute,
                                                               private router: Router) {
         this.typeoperations = this.typeoperationService.getTypeoperationsList()
     };
@@ -43,4 +45,9 @@ export class TypeoperationComponent implements OnInit {
           },
           error => console.log(error));
     }
+
+    logout(): void {
+         this.tokenStorageService.signOut();
+         window.location.reload();
+       }
 }

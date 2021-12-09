@@ -3,20 +3,19 @@
   <form (ngSubmit)="onSubmit()">
 
     <div class="form-group">
-      <label for="name">Last Name</label>
+      <label>Last Name</label>
       <input type="text" class="form-control" id="lastName" required [(ngModel)]="employee.lastName" name="lastName">
-      <label for="name">First Name</label>
+      <label >First Name</label>
       <input type="text" class="form-control" id="firstName" required [(ngModel)]="employee.firstName" name="firstName">
-      <label for="name">Patronymic</label>
+      <label >Patronymic</label>
       <input type="text" class="form-control" id="patronymic" required [(ngModel)]="employee.patronymic" name="patronymic">
-      <label for="name">Birthday</label>
- <!--     <input type="text" class="form-control" id="birthday" required [(ngModel)]="employee.birthday" name="birthday"> -->
-      <input type="date" class="form-control" id="birthday" required [(ngModel)]="employee.birthday" name="birthday">
-      <label for="name">Gender</label>
+      <label >Birthday</label>
+      <input type="date" class="form-control" id="birthday" required [(ngModel)]="date" name="birthday">
+      <label >Gender</label>
       <input type="text" class="form-control" id="gender" required [(ngModel)]="employee.gender" name="gender">
-      <label for="name">Job Number</label>
+      <label >Job Number</label>
       <input type="text" class="form-control" id="jobNumber" required [(ngModel)]="employee.jobNumber" name="jobNumber">
-      <label for="name">Home Number</label>
+      <label >Home Number</label>
       <input type="text" class="form-control" id="homeNumber" required [(ngModel)]="employee.homeNumber" name="homeNumber">
       <div class="row">
         <div class="col-md-4">
@@ -28,9 +27,9 @@
         </div>
       </div>
       <input type="text" class="form-control" id="street" required [(ngModel)]="employee.street" name="street">
-      <label for="name">House</label>
+      <label >House</label>
       <input type="text" class="form-control" id="house" required [(ngModel)]="employee.house" name="house">
-      <label for="name">Apartment</label>
+      <label >Apartment</label>
       <input type="text" class="form-control" id="apartment" required [(ngModel)]="employee.apartment" name="apartment">
     </div>
     <br>
