@@ -13,6 +13,8 @@ import { TokenStorageService } from '../../token-storage.service';
 export class TypeoperationComponent implements OnInit {
 
   typeoperations: Observable<Typeoperation[]>;
+  roles: string[] = [];
+        isAdmin = false;
 
     constructor(private tokenStorageService: TokenStorageService,
     private typeoperationService: TypeoperationService, private route: ActivatedRoute,
@@ -22,6 +24,10 @@ export class TypeoperationComponent implements OnInit {
 
     ngOnInit(): void {
       this.typeoperations = this.typeoperationService.getTypeoperationsList();
+      this.roles = this.tokenStorageService.getUser().roles;
+              if(this.roles[0] == "ROLE_ADMIN") {
+                  this.isAdmin = true;
+                }
     }
 
     reloadData() {

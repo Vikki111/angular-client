@@ -13,6 +13,8 @@ import { TokenStorageService } from '../../token-storage.service';
 export class DepartmentComponent implements OnInit {
 
     departments: Observable<Department[]>;
+    roles: string[] = [];
+       isAdmin = false;
 
    constructor(private tokenStorageService: TokenStorageService,
    private departmentService: DepartmentService, private route: ActivatedRoute,
@@ -22,6 +24,10 @@ export class DepartmentComponent implements OnInit {
 
    ngOnInit(): void {
      this.departments = this.departmentService.getDepartmentsList();
+     this.roles = this.tokenStorageService.getUser().roles;
+         if(this.roles[0] == "ROLE_ADMIN") {
+             this.isAdmin = true;
+           }
    }
 
    reloadData() {

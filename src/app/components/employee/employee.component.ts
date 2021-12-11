@@ -12,6 +12,8 @@ import { TokenStorageService } from '../../token-storage.service';
 })
 export class EmployeeComponent implements OnInit {
    employees: Observable<Employee[]>;
+   roles: string[] = [];
+      isAdmin = false;
 
   constructor(private tokenStorageService: TokenStorageService,
   private employeeService: EmployeeService, private route: ActivatedRoute,
@@ -21,6 +23,10 @@ export class EmployeeComponent implements OnInit {
 
   ngOnInit(): void {
     this.employees = this.employeeService.getEmployeesList();
+    this.roles = this.tokenStorageService.getUser().roles;
+        if(this.roles[0] == "ROLE_ADMIN") {
+            this.isAdmin = true;
+          }
   }
 
   reloadData() {

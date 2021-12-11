@@ -21,22 +21,22 @@
 </nav>
 <div class="container">
     <h3>Positions</h3>
-    <button (click) = "createPosition()" class = "btn btn-success">Add position</button>
+    <button *ngIf="this.isAdmin" (click) = "createPosition()" class = "btn btn-success">Add position</button>
     <br>
     <br>
     <table class="table table-striped table-bordered">
       <thead>
       <tr>
         <th>Position Name</th>
-        <th>Delete</th>
-        <th>Update</th>
+        <th *ngIf="this.isAdmin">Delete</th>
+        <th *ngIf="this.isAdmin">Update</th>
       </tr>
       </thead>
       <tbody>
       <tr *ngFor="let position of positions | async">
         <td>{{position.positionName}}</td>
-        <td><button (click)="deletePosition(position.positionId)" class = "btn btn-danger" >Delete</button></td>
-        <td><button (click) = "updatePosition(position.positionId)" class = "btn btn-secondary"> Update</button></td>
+        <td *ngIf="this.isAdmin"><button *ngIf="this.isAdmin" (click)="deletePosition(position.positionId)" class = "btn btn-danger" >Delete</button></td>
+        <td *ngIf="this.isAdmin"><button *ngIf="this.isAdmin" (click) = "updatePosition(position.positionId)" class = "btn btn-secondary"> Update</button></td>
       </tr>
       </tbody>
     </table>

@@ -21,7 +21,7 @@
 </nav>
 <div class="container">
     <h3>Employee Operations</h3>
-    <button (click) = "createEmployeeoperation()" class = "btn btn-success">Add employee operation</button>
+    <button *ngIf="this.isAdmin" (click) = "createEmployeeoperation()" class = "btn btn-success">Add employee operation</button>
     <br>
     <br>
     <table class="table table-striped table-bordered">
@@ -32,8 +32,8 @@
         <th>Position Name</th>
         <th>Type Operation Name</th>
         <th>Department Name</th>
-        <th>Delete</th>
-        <th>Update</th>
+        <th *ngIf="this.isAdmin">Delete</th>
+        <th *ngIf="this.isAdmin">Update</th>
       </tr>
       </thead>
       <tbody>
@@ -43,8 +43,8 @@
         <td>{{employeeoperation.positionName}}</td>
         <td>{{employeeoperation.typeOperationName}}</td>
         <td>{{employeeoperation.departmentName}}</td>
-        <td><button (click)="deleteEmployeeoperation(employeeoperation.orderNumber)" class = "btn btn-danger">Delete</button></td>
-        <td><button (click) = "updateEmployeeoperation(employeeoperation.orderNumber)" class = "btn btn-secondary"> Update</button></td>
+        <td *ngIf="this.isAdmin"><button (click)="deleteEmployeeoperation(employeeoperation.orderNumber)" class = "btn btn-danger">Delete</button></td>
+        <td *ngIf="this.isAdmin"><button (click) = "updateEmployeeoperation(employeeoperation.orderNumber)" class = "btn btn-secondary"> Update</button></td>
       </tr>
       </tbody>
     </table>
